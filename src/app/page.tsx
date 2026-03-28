@@ -23,55 +23,68 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       <header className="sticky top-0 z-50 border-b border-white/5 bg-[#050a14]/90 backdrop-blur-xl">
         <nav className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
           <a href="/" className="group flex items-center space-x-3 cursor-pointer">
-            {/* 로고 마크: 부엉이 */}
             <div className="relative h-10 w-10 flex-shrink-0">
               <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-                {/* 몸통 */}
-                <path d="M9 22 C9 33 13 38 20 39 C27 38 31 33 31 22 L31 19 C31 13 26 10 20 10 C14 10 9 13 9 19 Z" fill="url(#owlBody)"/>
-                {/* 귀 왼쪽 */}
-                <path d="M13 11 L10 3 L16 10 Z" fill="url(#owlGrad)"/>
-                {/* 귀 오른쪽 */}
-                <path d="M27 11 L30 3 L24 10 Z" fill="url(#owlGrad)"/>
+                {/* 몸통 전체 */}
+                <path d="M6 36 C6 36 8 40 20 40 C32 40 34 36 34 36 L32 20 C32 12 27 7 20 7 C13 7 8 12 8 20 Z" fill="url(#nBody)"/>
+                {/* 왼쪽 귀 털 (뾰족하게) */}
+                <path d="M11 12 L7 1 L15 10 Z" fill="url(#nGrad)"/>
+                <path d="M12 11 L9 3 L15 9 Z" fill="url(#nGrad)" opacity="0.5"/>
+                {/* 오른쪽 귀 털 */}
+                <path d="M29 12 L33 1 L25 10 Z" fill="url(#nGrad)"/>
+                <path d="M28 11 L31 3 L25 9 Z" fill="url(#nGrad)" opacity="0.5"/>
                 {/* 얼굴 디스크 */}
-                <ellipse cx="20" cy="17" rx="9" ry="8" fill="none" stroke="url(#owlGrad)" strokeWidth="0.6" opacity="0.35"/>
-                {/* 왼쪽 눈 테두리 */}
-                <circle cx="15" cy="16" r="4.8" fill="#050a14" stroke="url(#owlGrad)" strokeWidth="1.2"/>
-                {/* 왼쪽 눈 홍채 */}
-                <circle cx="15" cy="16" r="3.2" fill="url(#eyeGlow)"/>
-                {/* 왼쪽 눈 동공 */}
-                <circle cx="15" cy="16" r="1.6" fill="#050a14"/>
-                {/* 왼쪽 눈 하이라이트 */}
-                <circle cx="15.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
-                {/* 오른쪽 눈 테두리 */}
-                <circle cx="25" cy="16" r="4.8" fill="#050a14" stroke="url(#owlGrad)" strokeWidth="1.2"/>
-                {/* 오른쪽 눈 홍채 */}
-                <circle cx="25" cy="16" r="3.2" fill="url(#eyeGlow)"/>
-                {/* 오른쪽 눈 동공 */}
-                <circle cx="25" cy="16" r="1.6" fill="#050a14"/>
-                {/* 오른쪽 눈 하이라이트 */}
-                <circle cx="25.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
+                <ellipse cx="20" cy="20" rx="11" ry="10" fill="url(#nFace)"/>
+                {/* 눈썹 왼쪽 */}
+                <path d="M10 15 C12 12 15 12 17 14" stroke="url(#nGrad)" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+                {/* 눈썹 오른쪽 */}
+                <path d="M30 15 C28 12 25 12 23 14" stroke="url(#nGrad)" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+                {/* 왼쪽 눈 흰자 */}
+                <circle cx="14.5" cy="19" r="5.5" fill="#0d1f2d" stroke="url(#nGrad)" strokeWidth="1"/>
+                {/* 왼쪽 홍채 */}
+                <circle cx="14.5" cy="19" r="4" fill="url(#nEye)"/>
+                {/* 왼쪽 동공 */}
+                <circle cx="14.5" cy="19" r="2" fill="#050a14"/>
+                {/* 왼쪽 하이라이트 */}
+                <circle cx="15.8" cy="17.5" r="1" fill="white" opacity="0.75"/>
+                <circle cx="13.5" cy="20.5" r="0.4" fill="white" opacity="0.35"/>
+                {/* 오른쪽 눈 흰자 */}
+                <circle cx="25.5" cy="19" r="5.5" fill="#0d1f2d" stroke="url(#nGrad)" strokeWidth="1"/>
+                {/* 오른쪽 홍채 */}
+                <circle cx="25.5" cy="19" r="4" fill="url(#nEye)"/>
+                {/* 오른쪽 동공 */}
+                <circle cx="25.5" cy="19" r="2" fill="#050a14"/>
+                {/* 오른쪽 하이라이트 */}
+                <circle cx="26.8" cy="17.5" r="1" fill="white" opacity="0.75"/>
+                <circle cx="24.5" cy="20.5" r="0.4" fill="white" opacity="0.35"/>
                 {/* 부리 */}
-                <path d="M20 21 L18.2 24.5 L20 23.2 L21.8 24.5 Z" fill="#22d3ee" opacity="0.9"/>
-                {/* 왼쪽 날개 */}
-                <path d="M9 22 C5 27 6 35 9 36 C11 32 11 27 12 23 Z" fill="url(#owlBody)" opacity="0.75"/>
-                {/* 오른쪽 날개 */}
-                <path d="M31 22 C35 27 34 35 31 36 C29 32 29 27 28 23 Z" fill="url(#owlBody)" opacity="0.75"/>
-                {/* 발톱 왼쪽 */}
-                <path d="M16 39 L14 41 M16 39 L16 41 M16 39 L18 41" stroke="url(#owlGrad)" strokeWidth="1" strokeLinecap="round"/>
-                {/* 발톱 오른쪽 */}
-                <path d="M24 39 L22 41 M24 39 L24 41 M24 39 L26 41" stroke="url(#owlGrad)" strokeWidth="1" strokeLinecap="round"/>
+                <path d="M20 24 L17.5 28 L20 26.5 L22.5 28 Z" fill="url(#nGrad)"/>
+                {/* 날개 왼쪽 */}
+                <path d="M8 22 C4 26 3 33 6 37 C8 33 9 27 10 23 Z" fill="url(#nBody)" opacity="0.9"/>
+                <path d="M8 24 C5 28 5 34 7 37" stroke="url(#nGrad)" strokeWidth="0.6" strokeLinecap="round" opacity="0.5"/>
+                {/* 날개 오른쪽 */}
+                <path d="M32 22 C36 26 37 33 34 37 C32 33 31 27 30 23 Z" fill="url(#nBody)" opacity="0.9"/>
+                <path d="M32 24 C35 28 35 34 33 37" stroke="url(#nGrad)" strokeWidth="0.6" strokeLinecap="round" opacity="0.5"/>
+                {/* 가슴 깃털 */}
+                <path d="M13 30 Q20 33 27 30" stroke="url(#nGrad)" strokeWidth="0.7" strokeLinecap="round" fill="none" opacity="0.5"/>
+                <path d="M14 33 Q20 36 26 33" stroke="url(#nGrad)" strokeWidth="0.7" strokeLinecap="round" fill="none" opacity="0.35"/>
                 <defs>
-                  <linearGradient id="owlGrad" x1="9" y1="3" x2="31" y2="39" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="nGrad" x1="7" y1="1" x2="33" y2="40" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stopColor="#34d399"/>
                     <stop offset="100%" stopColor="#22d3ee"/>
                   </linearGradient>
-                  <linearGradient id="owlBody" x1="9" y1="10" x2="31" y2="39" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#34d399" stopOpacity="0.22"/>
-                    <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.28"/>
+                  <linearGradient id="nBody" x1="6" y1="7" x2="34" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#34d399" stopOpacity="0.18"/>
+                    <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.26"/>
                   </linearGradient>
-                  <radialGradient id="eyeGlow" cx="45%" cy="40%" r="55%">
+                  <radialGradient id="nFace" cx="50%" cy="50%" r="55%">
+                    <stop offset="0%" stopColor="#1a3a4a" stopOpacity="0.6"/>
+                    <stop offset="100%" stopColor="#082030" stopOpacity="0.3"/>
+                  </radialGradient>
+                  <radialGradient id="nEye" cx="40%" cy="35%" r="60%">
                     <stop offset="0%" stopColor="#6ee7b7"/>
-                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.85"/>
+                    <stop offset="60%" stopColor="#0891b2"/>
+                    <stop offset="100%" stopColor="#065f80"/>
                   </radialGradient>
                 </defs>
               </svg>
@@ -365,34 +378,45 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <svg viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 flex-shrink-0">
-                  <path d="M9 22 C9 33 13 38 20 39 C27 38 31 33 31 22 L31 19 C31 13 26 10 20 10 C14 10 9 13 9 19 Z" fill="url(#fOwlBody)"/>
-                  <path d="M13 11 L10 3 L16 10 Z" fill="url(#fOwlGrad)"/>
-                  <path d="M27 11 L30 3 L24 10 Z" fill="url(#fOwlGrad)"/>
-                  <ellipse cx="20" cy="17" rx="9" ry="8" fill="none" stroke="url(#fOwlGrad)" strokeWidth="0.6" opacity="0.35"/>
-                  <circle cx="15" cy="16" r="4.8" fill="#03070e" stroke="url(#fOwlGrad)" strokeWidth="1.2"/>
-                  <circle cx="15" cy="16" r="3.2" fill="url(#fEyeGlow)"/>
-                  <circle cx="15" cy="16" r="1.6" fill="#03070e"/>
-                  <circle cx="15.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
-                  <circle cx="25" cy="16" r="4.8" fill="#03070e" stroke="url(#fOwlGrad)" strokeWidth="1.2"/>
-                  <circle cx="25" cy="16" r="3.2" fill="url(#fEyeGlow)"/>
-                  <circle cx="25" cy="16" r="1.6" fill="#03070e"/>
-                  <circle cx="25.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
-                  <path d="M20 21 L18.2 24.5 L20 23.2 L21.8 24.5 Z" fill="#22d3ee" opacity="0.9"/>
-                  <path d="M9 22 C5 27 6 35 9 36 C11 32 11 27 12 23 Z" fill="url(#fOwlBody)" opacity="0.75"/>
-                  <path d="M31 22 C35 27 34 35 31 36 C29 32 29 27 28 23 Z" fill="url(#fOwlBody)" opacity="0.75"/>
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 flex-shrink-0">
+                  <path d="M6 36 C6 36 8 40 20 40 C32 40 34 36 34 36 L32 20 C32 12 27 7 20 7 C13 7 8 12 8 20 Z" fill="url(#fBody)"/>
+                  <path d="M11 12 L7 1 L15 10 Z" fill="url(#fGrad)"/>
+                  <path d="M12 11 L9 3 L15 9 Z" fill="url(#fGrad)" opacity="0.5"/>
+                  <path d="M29 12 L33 1 L25 10 Z" fill="url(#fGrad)"/>
+                  <path d="M28 11 L31 3 L25 9 Z" fill="url(#fGrad)" opacity="0.5"/>
+                  <ellipse cx="20" cy="20" rx="11" ry="10" fill="url(#fFace)"/>
+                  <path d="M10 15 C12 12 15 12 17 14" stroke="url(#fGrad)" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+                  <path d="M30 15 C28 12 25 12 23 14" stroke="url(#fGrad)" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+                  <circle cx="14.5" cy="19" r="5.5" fill="#0d1f2d" stroke="url(#fGrad)" strokeWidth="1"/>
+                  <circle cx="14.5" cy="19" r="4" fill="url(#fEye)"/>
+                  <circle cx="14.5" cy="19" r="2" fill="#050a14"/>
+                  <circle cx="15.8" cy="17.5" r="1" fill="white" opacity="0.75"/>
+                  <circle cx="25.5" cy="19" r="5.5" fill="#0d1f2d" stroke="url(#fGrad)" strokeWidth="1"/>
+                  <circle cx="25.5" cy="19" r="4" fill="url(#fEye)"/>
+                  <circle cx="25.5" cy="19" r="2" fill="#050a14"/>
+                  <circle cx="26.8" cy="17.5" r="1" fill="white" opacity="0.75"/>
+                  <path d="M20 24 L17.5 28 L20 26.5 L22.5 28 Z" fill="url(#fGrad)"/>
+                  <path d="M8 22 C4 26 3 33 6 37 C8 33 9 27 10 23 Z" fill="url(#fBody)" opacity="0.9"/>
+                  <path d="M32 22 C36 26 37 33 34 37 C32 33 31 27 30 23 Z" fill="url(#fBody)" opacity="0.9"/>
+                  <path d="M13 30 Q20 33 27 30" stroke="url(#fGrad)" strokeWidth="0.7" strokeLinecap="round" fill="none" opacity="0.5"/>
+                  <path d="M14 33 Q20 36 26 33" stroke="url(#fGrad)" strokeWidth="0.7" strokeLinecap="round" fill="none" opacity="0.35"/>
                   <defs>
-                    <linearGradient id="fOwlGrad" x1="9" y1="3" x2="31" y2="39" gradientUnits="userSpaceOnUse">
+                    <linearGradient id="fGrad" x1="7" y1="1" x2="33" y2="40" gradientUnits="userSpaceOnUse">
                       <stop offset="0%" stopColor="#34d399"/>
                       <stop offset="100%" stopColor="#22d3ee"/>
                     </linearGradient>
-                    <linearGradient id="fOwlBody" x1="9" y1="10" x2="31" y2="39" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#34d399" stopOpacity="0.22"/>
-                      <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.28"/>
+                    <linearGradient id="fBody" x1="6" y1="7" x2="34" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#34d399" stopOpacity="0.18"/>
+                      <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.26"/>
                     </linearGradient>
-                    <radialGradient id="fEyeGlow" cx="45%" cy="40%" r="55%">
+                    <radialGradient id="fFace" cx="50%" cy="50%" r="55%">
+                      <stop offset="0%" stopColor="#1a3a4a" stopOpacity="0.6"/>
+                      <stop offset="100%" stopColor="#082030" stopOpacity="0.3"/>
+                    </radialGradient>
+                    <radialGradient id="fEye" cx="40%" cy="35%" r="60%">
                       <stop offset="0%" stopColor="#6ee7b7"/>
-                      <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.85"/>
+                      <stop offset="60%" stopColor="#0891b2"/>
+                      <stop offset="100%" stopColor="#065f80"/>
                     </radialGradient>
                   </defs>
                 </svg>
