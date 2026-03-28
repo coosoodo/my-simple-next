@@ -1,73 +1,110 @@
 // src/app/page.tsx (서버 컴포넌트)
 import type { Metadata } from 'next';
 
-// 1. 보안 및 최적화: 메타데이터 설정
 export const metadata: Metadata = {
-  title: 'SageLine - 지혜로운 데이터, 명확한 비즈니스 라인',
-  description: '세이지라인은 데이터를 통해 기업의 혁신적인 의사결정을 돕는 최고의 파트너입니다.',
+  title: 'SageLine | Data Intelligence',
+  description: '데이터로 그리는 비즈니스의 미래, 세이지라인입니다.',
 };
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-stone-50 text-neutral-900">
+    <div className="flex min-h-screen flex-col bg-[#0f172a] text-slate-200 selection:bg-indigo-500/30">
       
-      {/* 2. 네비게이션 헤더 (정적 구조) */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b">
-        <nav className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <div className="text-2xl font-bold text-emerald-800">SageLine</div>
-          <div className="flex space-x-6 text-sm font-medium text-neutral-700">
-            {['소개', '서비스', '솔루션', '문의'].map(item => (
-              <a key={item} href="#" className="hover:text-emerald-700 transition">
+      {/* 1. 네비게이션 헤더 (유리 질감 효과) */}
+      <header className="sticky top-0 z-50 border-b border-slate-800 bg-[#0f172a]/80 backdrop-blur-md">
+        <nav className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+          <div className="flex items-center space-x-2">
+            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/20" />
+            <span className="text-2xl font-black tracking-tighter text-white">SageLine</span>
+          </div>
+          <div className="hidden md:flex items-center space-x-10 text-sm font-semibold tracking-wide">
+            {['Vision', 'Solution', 'Technology', 'Contact'].map(item => (
+              <a key={item} href="#" className="text-slate-400 hover:text-indigo-400 transition-colors duration-200">
                 {item}
               </a>
             ))}
+            <button className="rounded-full bg-slate-800 px-5 py-2 text-white hover:bg-slate-700 transition">
+              Get Started
+            </button>
           </div>
         </nav>
       </header>
 
-      {/* 3. Hero 섹션 (핵심 가치 전달) */}
-      <main className="flex-grow container mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <section className="text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-emerald-950">
-            지혜로운 데이터 분석,<br />
-            명확한 비즈니스 라인.
-          </h1>
-          <p className="mt-8 text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            SageLine은 복잡한 데이터 속에서 비즈니스의 핵심 통찰력을 발견하고,<br />
-            이를 실행 가능한 명확한 전략적 방향성(Line)으로 제시합니다.
-          </p>
-          <div className="mt-12">
-            {/* 4. CTA 버튼 (클라이언트 컴포넌트로 분리 대상) */}
-            <button className="px-8 py-4 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition transform hover:-translate-y-0.5 shadow-lg">
-              상담 신청하기
-            </button>
+      {/* 2. Hero 섹션 (그라데이션 및 강조) */}
+      <main className="flex-grow">
+        <section className="relative overflow-hidden px-6 py-24 lg:py-40">
+          {/* 배경 장식 요소 */}
+          <div className="absolute top-0 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-indigo-600/10 blur-[120px]" />
+          
+          <div className="container mx-auto max-w-7xl text-center">
+            <div className="inline-block rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-indigo-400 mb-8">
+              The Future of Data Analysis
+            </div>
+            <h1 className="text-6xl md:text-8xl font-black tracking-tight text-white leading-[1.1]">
+              Predict Your <br />
+              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Next Business Line
+              </span>
+            </h1>
+            <p className="mt-10 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-light">
+              세이지라인은 단순한 분석을 넘어 데이터 사이의 연결 고리를 찾아냅니다. 
+              미래를 예측하고 의사결정의 명확한 가이드를 제공합니다.
+            </p>
+            <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button className="w-full sm:w-auto px-10 py-5 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-500 transition-all shadow-[0_0_20px_rgba(79,70,229,0.4)]">
+                무료 진단 시작하기
+              </button>
+              <button className="w-full sm:w-auto px-10 py-5 bg-transparent border border-slate-700 text-slate-300 rounded-xl font-bold hover:bg-slate-800 transition">
+                기술 문서 보기
+              </button>
+            </div>
           </div>
         </section>
 
-        {/* 5. 주요 서비스 섹션 (데이터 기반 구조화 가능) */}
-        <section className="mt-24 grid md:grid-cols-3 gap-10">
-          <ServiceCard title="비즈니스 전략 컨설팅" description="데이터 기반 시장 분석을 통해 명확한 성장 전략을 수립합니다." />
-          <ServiceCard title="빅데이터 분석 솔루션" description="복잡한 대용량 데이터를 시각화하고 인사이트를 도출합니다." />
-          <ServiceCard title="AI 예측 모델링" description="머신러닝 기술을 활용하여 미래 비즈니스 흐름을 예측합니다." />
+        {/* 3. 서비스 카드 섹션 (글래스모피즘 스타일) */}
+        <section className="container mx-auto max-w-7xl px-6 py-20">
+          <div className="grid md:grid-cols-3 gap-8">
+            <FeatureCard 
+              icon="⚡" 
+              title="Real-time Stream" 
+              description="초단위 데이터 스트림 분석으로 즉각적인 시장 반응을 포착합니다." 
+            />
+            <FeatureCard 
+              icon="🧠" 
+              title="AI Deep Insights" 
+              description="고도화된 신경망 모델을 통해 비즈니스 패턴과 변곡점을 찾아냅니다." 
+            />
+            <FeatureCard 
+              icon="📊" 
+              title="Decision Intelligence" 
+              description="데이터 시각화를 넘어 최적의 행동 시나리오를 자동 생성합니다." 
+            />
+          </div>
         </section>
       </main>
 
-      {/* 6. 푸터 */}
-      <footer className="border-t bg-white mt-16">
-        <div className="container mx-auto max-w-7xl px-6 py-8 text-sm text-center text-neutral-500">
-          &copy; 2026 SageLine. All rights reserved. 지혜로운 데이터 파트너.
+      {/* 4. 푸터 */}
+      <footer className="border-t border-slate-800 bg-[#0b1222]">
+        <div className="container mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-500">
+          <div className="font-bold text-white opacity-80">© 2026 SageLine.</div>
+          <div className="flex space-x-8">
+            <a href="#" className="hover:text-slate-300">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-300">Terms of Service</a>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
 
-// 7. 컴포넌트 분리: 코드 재사용성 및 가독성 향상
-function ServiceCard({ title, description }: { title: string; description: string }) {
+// 재사용 가능한 카드 컴포넌트
+function FeatureCard({ icon, title, description }: { icon: string; title: string; description: string }) {
   return (
-    <div className="bg-white p-8 border rounded-2xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
-      <h3 className="text-2xl font-semibold text-emerald-900">{title}</h3>
-      <p className="mt-4 text-neutral-600 leading-relaxed">{description}</p>
+    <div className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/50 p-10 hover:border-indigo-500/50 transition-all duration-300 hover:-translate-y-2">
+      <div className="absolute top-0 right-0 -mr-8 -mt-8 h-24 w-24 rounded-full bg-indigo-600/10 blur-2xl group-hover:bg-indigo-600/20" />
+      <div className="text-4xl mb-6">{icon}</div>
+      <h3 className="text-xl font-bold text-white mb-4 tracking-tight">{title}</h3>
+      <p className="text-slate-400 leading-relaxed font-light">{description}</p>
     </div>
   );
 }
