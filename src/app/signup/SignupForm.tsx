@@ -31,24 +31,6 @@ export default function SignupForm() {
 
   return (
     <form action={formAction} className="space-y-6">
-      {/* 아이디 (필수) */}
-      <div>
-        <label htmlFor="userId" className="block text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">
-          아이디 <span className="text-emerald-400">*</span>
-        </label>
-        <input
-          id="userId"
-          name="userId"
-          type="text"
-          autoComplete="username"
-          placeholder="영문, 숫자 4자 이상"
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-600 focus:border-emerald-500/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all"
-        />
-        {state.errors?.userId && (
-          <p className="mt-2 text-xs text-red-400">{state.errors.userId[0]}</p>
-        )}
-      </div>
-
       {/* 이름 */}
       <div>
         <label htmlFor="name" className="block text-xs font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">

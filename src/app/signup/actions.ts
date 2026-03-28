@@ -4,7 +4,6 @@ import { supabase } from '@/lib/supabase';
 
 export type SignupState = {
   errors?: {
-    userId?: string[];
     name?: string[];
     email?: string[];
     phone?: string[];
@@ -19,7 +18,6 @@ export async function signupAction(
   prevState: SignupState,
   formData: FormData
 ): Promise<SignupState> {
-  const userId = (formData.get('userId') as string)?.trim();
   const name = (formData.get('name') as string)?.trim();
   const email = (formData.get('email') as string)?.trim();
   const phone = (formData.get('phone') as string)?.trim();
@@ -27,12 +25,6 @@ export async function signupAction(
   const confirm = formData.get('confirm') as string;
 
   const errors: SignupState['errors'] = {};
-
-  if (!userId || userId.length < 4) {
-    errors.userId = ['아이디는 4자 이상 입력해주세요.'];
-  } else if (!/^[a-zA-Z0-9_]+$/.test(userId)) {
-    errors.userId = ['아이디는 영문, 숫자, 밑줄(_)만 사용할 수 있습니다.'];
-  }
 
   if (!name || name.length < 2) {
     errors.name = ['이름은 2자 이상 입력해주세요.'];
@@ -63,7 +55,7 @@ export async function signupAction(
     email,
     password,
     options: {
-      data: { user_id: userId, name, phone: phone || null },
+      data: { name, phone: phone || null },
     },
   });
 
