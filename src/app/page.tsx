@@ -28,6 +28,12 @@ export default function HomePage() {
               </a>
             ))}
           </div>
+          <a
+            href="/signup"
+            className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
+          >
+            회원가입
+          </a>
         </nav>
       </header>
 
