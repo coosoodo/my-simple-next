@@ -1,12 +1,16 @@
 // src/app/page.tsx (서버 컴포넌트)
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'SAGE LINE | 현명한 선택, 명확한 길',
   description: '데이터 기반의 통찰력과 전략적 기술로 비즈니스의 성공을 설계하는 파트너, 세이지라인입니다.',
 };
 
-export default function HomePage() {
+export default async function HomePage({ searchParams }: { searchParams: Promise<{ code?: string }> }) {
+  const { code } = await searchParams;
+  if (code) redirect(`/auth/callback?code=${code}`);
+
   return (
     <div className="flex min-h-screen flex-col bg-[#050a14] text-slate-300 selection:bg-emerald-500/30">
       
