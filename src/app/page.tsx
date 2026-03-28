@@ -22,14 +22,68 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* 1. 프리미엄 네비게이션 */}
       <header className="sticky top-0 z-50 border-b border-white/5 bg-[#050a14]/90 backdrop-blur-xl">
         <nav className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
-          <div className="group flex items-center space-x-3 cursor-pointer">
-            <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-600 p-[2px]">
-              <div className="flex h-full w-full items-center justify-center rounded-[14px] bg-[#050a14]">
-                <div className="h-4 w-4 rounded-full bg-emerald-400 animate-pulse" />
-              </div>
+          <a href="/" className="group flex items-center space-x-3 cursor-pointer">
+            {/* 로고 마크: 부엉이 */}
+            <div className="relative h-10 w-10 flex-shrink-0">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
+                {/* 몸통 */}
+                <path d="M9 22 C9 33 13 38 20 39 C27 38 31 33 31 22 L31 19 C31 13 26 10 20 10 C14 10 9 13 9 19 Z" fill="url(#owlBody)"/>
+                {/* 귀 왼쪽 */}
+                <path d="M13 11 L10 3 L16 10 Z" fill="url(#owlGrad)"/>
+                {/* 귀 오른쪽 */}
+                <path d="M27 11 L30 3 L24 10 Z" fill="url(#owlGrad)"/>
+                {/* 얼굴 디스크 */}
+                <ellipse cx="20" cy="17" rx="9" ry="8" fill="none" stroke="url(#owlGrad)" strokeWidth="0.6" opacity="0.35"/>
+                {/* 왼쪽 눈 테두리 */}
+                <circle cx="15" cy="16" r="4.8" fill="#050a14" stroke="url(#owlGrad)" strokeWidth="1.2"/>
+                {/* 왼쪽 눈 홍채 */}
+                <circle cx="15" cy="16" r="3.2" fill="url(#eyeGlow)"/>
+                {/* 왼쪽 눈 동공 */}
+                <circle cx="15" cy="16" r="1.6" fill="#050a14"/>
+                {/* 왼쪽 눈 하이라이트 */}
+                <circle cx="15.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
+                {/* 오른쪽 눈 테두리 */}
+                <circle cx="25" cy="16" r="4.8" fill="#050a14" stroke="url(#owlGrad)" strokeWidth="1.2"/>
+                {/* 오른쪽 눈 홍채 */}
+                <circle cx="25" cy="16" r="3.2" fill="url(#eyeGlow)"/>
+                {/* 오른쪽 눈 동공 */}
+                <circle cx="25" cy="16" r="1.6" fill="#050a14"/>
+                {/* 오른쪽 눈 하이라이트 */}
+                <circle cx="25.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
+                {/* 부리 */}
+                <path d="M20 21 L18.2 24.5 L20 23.2 L21.8 24.5 Z" fill="#22d3ee" opacity="0.9"/>
+                {/* 왼쪽 날개 */}
+                <path d="M9 22 C5 27 6 35 9 36 C11 32 11 27 12 23 Z" fill="url(#owlBody)" opacity="0.75"/>
+                {/* 오른쪽 날개 */}
+                <path d="M31 22 C35 27 34 35 31 36 C29 32 29 27 28 23 Z" fill="url(#owlBody)" opacity="0.75"/>
+                {/* 발톱 왼쪽 */}
+                <path d="M16 39 L14 41 M16 39 L16 41 M16 39 L18 41" stroke="url(#owlGrad)" strokeWidth="1" strokeLinecap="round"/>
+                {/* 발톱 오른쪽 */}
+                <path d="M24 39 L22 41 M24 39 L24 41 M24 39 L26 41" stroke="url(#owlGrad)" strokeWidth="1" strokeLinecap="round"/>
+                <defs>
+                  <linearGradient id="owlGrad" x1="9" y1="3" x2="31" y2="39" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#34d399"/>
+                    <stop offset="100%" stopColor="#22d3ee"/>
+                  </linearGradient>
+                  <linearGradient id="owlBody" x1="9" y1="10" x2="31" y2="39" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#34d399" stopOpacity="0.22"/>
+                    <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.28"/>
+                  </linearGradient>
+                  <radialGradient id="eyeGlow" cx="45%" cy="40%" r="55%">
+                    <stop offset="0%" stopColor="#6ee7b7"/>
+                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.85"/>
+                  </radialGradient>
+                </defs>
+              </svg>
             </div>
-            <span className="text-2xl font-black tracking-tighter text-white">SAGE LINE</span>
-          </div>
+            {/* 워드마크 */}
+            <div className="flex flex-col leading-none">
+              <span className="text-[18px] font-black tracking-[0.08em] text-white group-hover:text-emerald-300 transition-colors duration-300">
+                SAGE<span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent"> LINE</span>
+              </span>
+              <span className="text-[8px] font-bold tracking-[0.25em] text-slate-500 uppercase mt-0.5">Data-Driven Strategy</span>
+            </div>
+          </a>
           <div className="hidden md:flex items-center space-x-12 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
             {[['Vision', '#vision'], ['Business', '#business'], ['Technology', '#technology']].map(([item, href]) => (
               <a key={item} href={href} className="hover:text-emerald-400 transition-all duration-300">
@@ -310,7 +364,45 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         <div className="container mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             <div>
-              <div className="text-3xl font-black text-white tracking-tighter mb-4">SAGE LINE</div>
+              <div className="flex items-center gap-3 mb-4">
+                <svg viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 flex-shrink-0">
+                  <path d="M9 22 C9 33 13 38 20 39 C27 38 31 33 31 22 L31 19 C31 13 26 10 20 10 C14 10 9 13 9 19 Z" fill="url(#fOwlBody)"/>
+                  <path d="M13 11 L10 3 L16 10 Z" fill="url(#fOwlGrad)"/>
+                  <path d="M27 11 L30 3 L24 10 Z" fill="url(#fOwlGrad)"/>
+                  <ellipse cx="20" cy="17" rx="9" ry="8" fill="none" stroke="url(#fOwlGrad)" strokeWidth="0.6" opacity="0.35"/>
+                  <circle cx="15" cy="16" r="4.8" fill="#03070e" stroke="url(#fOwlGrad)" strokeWidth="1.2"/>
+                  <circle cx="15" cy="16" r="3.2" fill="url(#fEyeGlow)"/>
+                  <circle cx="15" cy="16" r="1.6" fill="#03070e"/>
+                  <circle cx="15.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
+                  <circle cx="25" cy="16" r="4.8" fill="#03070e" stroke="url(#fOwlGrad)" strokeWidth="1.2"/>
+                  <circle cx="25" cy="16" r="3.2" fill="url(#fEyeGlow)"/>
+                  <circle cx="25" cy="16" r="1.6" fill="#03070e"/>
+                  <circle cx="25.9" cy="15" r="0.75" fill="white" opacity="0.65"/>
+                  <path d="M20 21 L18.2 24.5 L20 23.2 L21.8 24.5 Z" fill="#22d3ee" opacity="0.9"/>
+                  <path d="M9 22 C5 27 6 35 9 36 C11 32 11 27 12 23 Z" fill="url(#fOwlBody)" opacity="0.75"/>
+                  <path d="M31 22 C35 27 34 35 31 36 C29 32 29 27 28 23 Z" fill="url(#fOwlBody)" opacity="0.75"/>
+                  <defs>
+                    <linearGradient id="fOwlGrad" x1="9" y1="3" x2="31" y2="39" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#34d399"/>
+                      <stop offset="100%" stopColor="#22d3ee"/>
+                    </linearGradient>
+                    <linearGradient id="fOwlBody" x1="9" y1="10" x2="31" y2="39" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#34d399" stopOpacity="0.22"/>
+                      <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.28"/>
+                    </linearGradient>
+                    <radialGradient id="fEyeGlow" cx="45%" cy="40%" r="55%">
+                      <stop offset="0%" stopColor="#6ee7b7"/>
+                      <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.85"/>
+                    </radialGradient>
+                  </defs>
+                </svg>
+                <div className="leading-none">
+                  <div className="text-2xl font-black tracking-[0.08em] text-white">
+                    SAGE<span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent"> LINE</span>
+                  </div>
+                  <div className="text-[8px] font-bold tracking-[0.25em] text-slate-600 uppercase mt-0.5">Data-Driven Strategy</div>
+                </div>
+              </div>
               <p className="text-slate-500 max-w-sm text-sm font-light leading-relaxed">
                 데이터로 세상을 읽고, 전략으로 미래를 씁니다. <br />
                 귀사의 가장 현명한 비즈니스 파트너가 되겠습니다.
