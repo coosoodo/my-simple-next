@@ -28,12 +28,20 @@ export default function HomePage() {
               </a>
             ))}
           </div>
-          <a
-            href="/signup"
-            className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
-          >
-            회원가입
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="/login"
+              className="px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-slate-400 hover:text-white transition-all duration-300"
+            >
+              로그인
+            </a>
+            <a
+              href="/signup"
+              className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
+            >
+              회원가입
+            </a>
+          </div>
         </nav>
       </header>
 
