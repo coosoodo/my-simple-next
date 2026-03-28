@@ -1,5 +1,7 @@
 'use server';
 
+import { supabase } from '@/lib/supabase';
+
 export type SignupState = {
   errors?: {
     name?: string[];
@@ -43,7 +45,20 @@ export async function signupAction(
     return { errors };
   }
 
-  // TODO: 실제 DB 저장 로직 추가 (예: Prisma, Supabase 등)
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { name },
+    },
+  });
+
+  if (error) {
+    if (error.message.includes('already registered') || error.message.includes('already been registered')) {
+      return { errors: { email: ['이미 사용 중인 이메일입니다.'] } };
+    }
+    return { message: `오류가 발생했습니다: ${error.message}` };
+  }
 
   return {
     success: true,
