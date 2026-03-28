@@ -448,6 +448,8 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <div className="mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-3 text-[10px] text-slate-600 font-medium tracking-widest">
             <span>COPYRIGHT © 2026 SAGELINE. ALL RIGHTS RESERVED.</span>
             <span className="hidden sm:inline text-slate-700">|</span>
+            <a href="/terms" className="hover:text-slate-400 transition-colors underline underline-offset-2">이용약관</a>
+            <span className="hidden sm:inline text-slate-700">|</span>
             <a href="/privacy" className="hover:text-slate-400 transition-colors underline underline-offset-2">개인정보처리방침</a>
           </div>
         </div>
