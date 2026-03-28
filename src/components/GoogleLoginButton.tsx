@@ -5,10 +5,11 @@ import { createSupabaseBrowserClient } from '@/lib/supabase-browser';
 export default function GoogleLoginButton({ label = 'Google로 계속하기' }: { label?: string }) {
   const handleGoogleLogin = async () => {
     const supabase = createSupabaseBrowserClient();
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin;
     await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: `${siteUrl}/auth/callback`,
       },
     });
   };
