@@ -1,6 +1,8 @@
 // src/app/page.tsx (서버 컴포넌트)
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
+import { createSupabaseServerClient } from '@/lib/supabase-server';
+import LogoutButton from '@/components/LogoutButton';
 
 export const metadata: Metadata = {
   title: 'SAGE LINE | 현명한 선택, 명확한 길',
@@ -10,6 +12,9 @@ export const metadata: Metadata = {
 export default async function HomePage({ searchParams }: { searchParams: Promise<{ code?: string }> }) {
   const { code } = await searchParams;
   if (code) redirect(`/auth/callback?code=${code}`);
+
+  const supabase = await createSupabaseServerClient();
+  const { data: { user } } = await supabase.auth.getUser();
 
   return (
     <div className="flex min-h-screen flex-col bg-[#050a14] text-slate-300 selection:bg-emerald-500/30">
@@ -33,18 +38,27 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <a
-              href="/login"
-              className="px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-slate-400 hover:text-white transition-all duration-300"
-            >
-              로그인
-            </a>
-            <a
-              href="/signup"
-              className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
-            >
-              회원가입
-            </a>
+            {user ? (
+              <>
+                <span className="text-xs text-slate-400 hidden md:block">{user.email}</span>
+                <LogoutButton />
+              </>
+            ) : (
+              <>
+                <a
+                  href="/login"
+                  className="px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-slate-400 hover:text-white transition-all duration-300"
+                >
+                  로그인
+                </a>
+                <a
+                  href="/signup"
+                  className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2 text-xs font-black uppercase tracking-[0.15em] text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
+                >
+                  회원가입
+                </a>
+              </>
+            )}
           </div>
         </nav>
       </header>
