@@ -3,6 +3,7 @@
 import { useActionState } from 'react';
 import { loginAction, LoginState } from './actions';
 import Link from 'next/link';
+import GoogleLoginButton from '@/components/GoogleLoginButton';
 
 const initialState: LoginState = {};
 
@@ -10,6 +11,17 @@ export default function LoginForm() {
   const [state, formAction, isPending] = useActionState(loginAction, initialState);
 
   return (
+    <div className="space-y-6">
+      {/* Google 로그인 */}
+      <GoogleLoginButton label="Google로 로그인" />
+
+      {/* 구분선 */}
+      <div className="flex items-center gap-4">
+        <div className="flex-1 border-t border-white/10" />
+        <span className="text-xs text-slate-600 font-medium">또는 이메일로 로그인</span>
+        <div className="flex-1 border-t border-white/10" />
+      </div>
+
     <form action={formAction} className="space-y-6">
       {/* 서버 오류 메시지 */}
       {state.message && (
@@ -77,5 +89,6 @@ export default function LoginForm() {
         </Link>
       </p>
     </form>
+    </div>
   );
 }

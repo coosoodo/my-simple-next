@@ -3,6 +3,7 @@
 import { useActionState } from 'react';
 import { signupAction, SignupState } from './actions';
 import Link from 'next/link';
+import GoogleLoginButton from '@/components/GoogleLoginButton';
 
 const initialState: SignupState = {};
 
@@ -30,6 +31,17 @@ export default function SignupForm() {
   }
 
   return (
+    <div className="space-y-6">
+      {/* Google 회원가입 */}
+      <GoogleLoginButton label="Google로 회원가입" />
+
+      {/* 구분선 */}
+      <div className="flex items-center gap-4">
+        <div className="flex-1 border-t border-white/10" />
+        <span className="text-xs text-slate-600 font-medium">또는 이메일로 가입</span>
+        <div className="flex-1 border-t border-white/10" />
+      </div>
+
     <form action={formAction} className="space-y-6">
       {/* 이메일 */}
       <div>
@@ -135,5 +147,6 @@ export default function SignupForm() {
         </Link>
       </p>
     </form>
+    </div>
   );
 }
