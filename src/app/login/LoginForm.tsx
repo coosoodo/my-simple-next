@@ -71,6 +71,11 @@ export default function LoginForm() {
           회원가입
         </Link>
       </p>
+      <p className="text-center text-xs text-slate-500">
+        <Link href="/change-password" className="text-slate-400 hover:text-emerald-400 hover:underline transition-colors">
+          비밀번호 변경
+        </Link>
+      </p>
     </form>
   );
 }
