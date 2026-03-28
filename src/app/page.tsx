@@ -91,11 +91,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               고객의 <span className="text-emerald-400 font-medium">투자 효율성</span>과 성공을 위한 최적의 솔루션을 설계합니다.
             </p>
             
-            <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button className="text-sm font-bold tracking-widest text-slate-300 border-b border-slate-700 pb-1 hover:text-emerald-400 hover:border-emerald-400 transition-all">
-                VIEW OUR VISION →
-              </button>
-            </div>
+
           </div>
         </section>
 
