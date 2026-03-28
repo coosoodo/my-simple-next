@@ -308,7 +308,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* 5. 푸터 */}
       <footer className="bg-[#03070e] border-t border-white/5 py-20 px-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             <div>
               <div className="text-3xl font-black text-white tracking-tighter mb-4">SAGE LINE</div>
               <p className="text-slate-500 max-w-sm text-sm font-light leading-relaxed">
@@ -316,10 +316,17 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 귀사의 가장 현명한 비즈니스 파트너가 되겠습니다.
               </p>
             </div>
-            <div className="flex space-x-12 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
-              <a href="#" className="hover:text-emerald-400 transition-colors">Privacy</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">Contact Us</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">LinkedIn</a>
+            <div className="flex flex-col gap-3 text-sm">
+              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 mb-2">Contact</div>
+              <a href="mailto:sageline2024@gmail.com" className="flex items-center gap-3 text-slate-400 hover:text-emerald-400 transition-colors">
+                <span className="text-slate-600">✉</span>
+                sageline2024@gmail.com
+              </a>
+              <div className="flex items-center gap-3 text-slate-400">
+                <span className="text-slate-600">☎</span>
+                <span>010-8067-4532</span>
+                <span className="text-xs text-slate-600">담당자 최재혁</span>
+              </div>
             </div>
           </div>
           <div className="mt-20 pt-8 border-t border-white/5 text-[10px] text-center text-slate-600 font-medium tracking-widest">
