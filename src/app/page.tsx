@@ -92,9 +92,6 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             </p>
             
             <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button className="group relative overflow-hidden rounded-full bg-white px-12 py-5 text-sm font-black text-black transition-all hover:bg-emerald-400">
-                무료 상담 신청하기
-              </button>
               <button className="text-sm font-bold tracking-widest text-slate-300 border-b border-slate-700 pb-1 hover:text-emerald-400 hover:border-emerald-400 transition-all">
                 VIEW OUR VISION →
               </button>
