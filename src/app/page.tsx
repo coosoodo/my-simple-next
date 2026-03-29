@@ -99,10 +99,23 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           </a>
           <div className="hidden md:flex items-center space-x-12 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
             {[['Vision', '#vision'], ['Business', '#business'], ['Technology', '#technology']].map(([item, href]) => (
-              <a key={item} href={href} className="hover:text-emerald-400 transition-all duration-300">
+              <a
+                key={item}
+                href={href}
+                className="hover:text-emerald-400 transition-all duration-300"
+              >
                 {item}
               </a>
             ))}
+            <a
+              href="https://cafe.naver.com/sageline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 rounded-full border border-[#03C75A]/40 bg-[#03C75A]/10 px-4 py-1.5 text-xs font-black uppercase tracking-[0.15em] text-[#03C75A] hover:bg-[#03C75A]/20 hover:border-[#03C75A]/70 transition-all duration-300"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5 flex-shrink-0"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/></svg>
+              카페
+            </a>
           </div>
           <div className="flex items-center gap-3">
             {user ? (
@@ -443,6 +456,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 <span>010-8067-4532</span>
                 <span className="text-xs text-slate-600">담당자 최재혁</span>
               </div>
+              <a href="https://cafe.naver.com/sageline" target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 rounded-full border border-[#03C75A]/40 bg-[#03C75A]/10 px-5 py-2.5 text-sm font-black tracking-wide text-[#03C75A] hover:bg-[#03C75A]/25 hover:border-[#03C75A]/70 transition-all duration-300 shadow-[0_0_16px_rgba(3,199,90,0.15)] hover:shadow-[0_0_24px_rgba(3,199,90,0.3)]">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 flex-shrink-0"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727z"/></svg>
+                네이버 카페 바로가기
+              </a>
             </div>
           </div>
           <div className="mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-3 text-[10px] text-slate-600 font-medium tracking-widest">
