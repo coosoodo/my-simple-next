@@ -171,7 +171,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-8 mb-20">
-            {/* 부엉이 트레이더 (풀) */}
+            {/* 부엉이 트레이더 프로 */}
             <Reveal id="owl-trader" className="group relative h-full scroll-mt-24 rounded-3xl border border-slate-100 bg-slate-50/50 p-10 hover:border-teal-500/30 hover:shadow-lg hover:shadow-teal-500/5 transition-all duration-300">
               <div className="absolute top-8 right-8 rounded-full bg-teal-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-teal-600">
                 All-in-One
@@ -179,8 +179,8 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-14 w-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-3xl">🦉</div>
                 <div>
-                  <h3 className="text-2xl font-black text-slate-900">부엉이 트레이더</h3>
-                  <p className="text-xs text-teal-600 font-bold uppercase tracking-widest mt-1">Owl Trader</p>
+                  <h3 className="text-2xl font-black text-slate-900">부엉이 트레이더 프로</h3>
+                  <p className="text-xs text-teal-600 font-bold uppercase tracking-widest mt-1">Owl Trader Pro</p>
                 </div>
               </div>
               <p className="text-sm text-slate-500 leading-relaxed font-light mb-8">
@@ -243,7 +243,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 <thead>
                   <tr className="border-b border-slate-100 bg-slate-50/70">
                     <th className="px-8 py-5 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">기능 비교</th>
-                    <th className="px-6 py-5 text-center text-sm font-bold text-teal-600">부엉이 트레이더</th>
+                    <th className="px-6 py-5 text-center text-sm font-bold text-teal-600">프로</th>
                     <th className="px-6 py-5 text-center text-sm font-bold text-navy-600">라이트</th>
                   </tr>
                 </thead>

@@ -31,8 +31,8 @@ export async function generateMetadata({
   const page = getPages(readManual()).find((p) => p.slug === chapter);
   if (!page) return { title: '사용자 설명서' };
   return {
-    title: { absolute: `${page.title} | 부엉이 트레이더 설명서` },
-    description: `부엉이 트레이더 사용자 설명서 — ${page.shortTitle}`,
+    title: { absolute: `${page.title} | 부엉이 트레이더 프로 설명서` },
+    description: `부엉이 트레이더 프로 사용자 설명서 — ${page.shortTitle}`,
   };
 }
 

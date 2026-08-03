@@ -60,7 +60,7 @@ export default async function ManualLiteIndexPage() {
                 <ArrowRight size={16} />
               </Link>
               <Link href="/manual" className="text-sm font-bold text-teal-600 hover:text-teal-700 transition-colors">
-                부엉이 트레이더(풀 버전) 설명서 보기 →
+                부엉이 트레이더 프로 설명서 보기 →
               </Link>
             </div>
           </div>

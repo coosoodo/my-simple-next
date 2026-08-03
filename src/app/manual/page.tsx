@@ -10,8 +10,8 @@ import { parseManual, getPages, getManualNav } from '@/lib/manual-utils';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: '부엉이 트레이더 사용자 설명서 | SAGE LINE' },
-  description: '부엉이 트레이더의 설치부터 자동 매매 전략 설정까지 전체 사용법을 안내합니다.',
+  title: { absolute: '부엉이 트레이더 프로 사용자 설명서 | SAGE LINE' },
+  description: '부엉이 트레이더 프로의 설치부터 자동 매매 전략 설정까지 전체 사용법을 안내합니다.',
 };
 
 export default async function ManualIndexPage() {
@@ -47,7 +47,7 @@ export default async function ManualIndexPage() {
               {meta.title}
             </h1>
             <p className="text-lg text-slate-600 font-light max-w-2xl mb-8">
-              부엉이 트레이더의 설치부터 고급 전략 설정까지 모든 과정을 장별로 안내합니다.
+              부엉이 트레이더 프로의 설치부터 고급 전략 설정까지 모든 과정을 장별로 안내합니다.
               처음 사용하시는 경우 <span className="text-teal-700 font-medium">1장부터</span> 순서대로 읽어보세요.
             </p>
             <div className="flex flex-wrap items-center gap-5">
