@@ -196,7 +196,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 ))}
               </ul>
               <Link
-                href="/manual"
+                href="/manual/1"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-teal-600 hover:text-teal-700 transition-colors group/link"
               >
                 사용자 설명서 보기 <ChevronRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
@@ -228,7 +228,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 ))}
               </ul>
               <Link
-                href="/manual-lite"
+                href="/manual-lite/1"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-navy-600 hover:text-navy-700 transition-colors group/link"
               >
                 사용자 설명서 보기 <ChevronRight size={14} className="group-hover/link:translate-x-1 transition-transform" />

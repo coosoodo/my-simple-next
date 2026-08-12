@@ -10,8 +10,9 @@ export default function ManualHeader({
   basePath = '/manual',
   subtitle = 'User Manual',
 }: {
-  version: string;
-  lastUpdated: string;
+  /** 특정 설명서에 속하지 않는 화면(제품 선택 페이지)에서는 넘기지 않는다. */
+  version?: string;
+  lastUpdated?: string;
   basePath?: string;
   subtitle?: string;
 }) {
@@ -31,17 +32,19 @@ export default function ManualHeader({
         </Link>
 
         <div className="flex items-center gap-6">
-          <div className="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-500 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-            <span className="flex items-center gap-1.5"><Tag size={12} className="text-teal-600" /> v{version}</span>
-            {lastUpdated && (
-              <>
-                <span className="h-3 w-px bg-slate-200"></span>
-                <span className="flex items-center gap-1.5"><Clock size={12} className="text-navy-600" /> {lastUpdated}</span>
-              </>
-            )}
-          </div>
+          {version && (
+            <div className="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-500 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+              <span className="flex items-center gap-1.5"><Tag size={12} className="text-teal-600" /> v{version}</span>
+              {lastUpdated && (
+                <>
+                  <span className="h-3 w-px bg-slate-200"></span>
+                  <span className="flex items-center gap-1.5"><Clock size={12} className="text-navy-600" /> {lastUpdated}</span>
+                </>
+              )}
+            </div>
+          )}
           <Link href={basePath} className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-teal-600 transition-colors">
-            목차
+            설명서 홈
           </Link>
           <Link href="/" className="text-xs font-bold uppercase tracking-[0.2em] text-teal-600 hover:text-teal-700 transition-colors">
             Back to Home
