@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 화면 캡처 원본 (파일명이 '스크린샷 …'인 것). 블러 처리 전 상태라
+# 그대로 커밋되면 안 된다. 의미 있는 이름으로 바꾼 사본만 커밋한다.
+public/images/**/스크린샷 *.png
+public/images/**/화면 캡처 *.png
