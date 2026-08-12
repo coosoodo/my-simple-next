@@ -1,0 +1,7 @@
+# 설명서 본문은 반드시 LF로 체크아웃한다.
+#
+# src/content/manual.md·manual-lite.md 는 manual-utils.getChapters 가
+# frontmatter 분리(--- split)와 장 제목(^# ) 파싱으로 장을 나눈다.
+# core.autocrlf=true 인 Windows 환경에서 CRLF 로 체크아웃되면 파싱이 실패해
+# /manual/* · /manual-lite/* 전체가 404 가 된다.
+*.md text eol=lf
