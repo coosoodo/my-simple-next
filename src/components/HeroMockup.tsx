@@ -7,9 +7,9 @@ const STRATEGIES = [
 ];
 
 const FILLS = [
-  { time: '09:32:05', side: '매수', name: '반도체 대장주', qty: '10주', profit: null },
-  { time: '10:14:23', side: '매도', name: '2차전지 소재', qty: '24주', profit: '+3.2%' },
-  { time: '11:02:47', side: '매수', name: 'AI 플랫폼', qty: '15주', profit: null },
+  { time: '09:32:05', side: '매수', name: '반도체 대장주', qty: '10주', profit: null, ai: true },
+  { time: '10:14:23', side: '매도', name: '2차전지 소재', qty: '24주', profit: '+3.2%', ai: false },
+  { time: '11:02:47', side: '매수', name: 'AI 플랫폼', qty: '15주', profit: null, ai: true },
 ];
 
 /** 히어로 섹션용 부엉이 트레이더 대시보드 목업 (장식용) */
@@ -100,6 +100,11 @@ export default function HeroMockup() {
                     {f.side}
                   </span>
                   <span className="font-bold text-slate-600">{f.name}</span>
+                  {f.ai && (
+                    <span className="hidden sm:inline rounded bg-teal-500/10 px-1.5 py-0.5 text-[10px] font-black text-teal-600">
+                      AI 승인
+                    </span>
+                  )}
                   <span className="text-slate-400">{f.qty} 체결</span>
                   {f.profit && <span className="ml-auto font-black text-teal-600">{f.profit}</span>}
                 </div>
